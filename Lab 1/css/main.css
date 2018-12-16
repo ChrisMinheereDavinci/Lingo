@@ -1,0 +1,29 @@
+body{
+    background-color: gray;
+}
+
+.buttons{
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: white;
+}
+
+#buttonOne{
+    background-color: green;
+    width: 90px;
+    height: 45px;
+}
+
+#buttonTwo{
+    background-color: red;
+    width: 90px;
+    height: 45px;
+}
+
+#buttonThree{
+    background-color: blue;
+    width: 90px;
+    height: 45px;
+}
