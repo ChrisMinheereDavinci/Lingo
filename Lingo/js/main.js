@@ -479,55 +479,89 @@ var words = [
 	"zever",
 	"zeeen"];
 
+var lingoArrayInput = words[Math.floor(Math.random() * words.length)];
+randomword.innerHTML = lingoArrayInput;
 
-var randomWords = words[Math.floor(Math.random() * words.length)];
-randomword.innerHTML = randomWords;
+var lingoArrayOutput;
+var userInput;
+var userOutput;
+
 
 function check() {
-	var x = document.getElementById('inputWord').value;
-	var outputWord = x.split("");
-
-	var radomOutputWord = randomWords.split("");
-	//letter 1
-	if (radomOutputWord[0] == x[0]) {
+	lingoArrayOutput = lingoArrayInput.split("");
+	userInput = document.getElementById('inputWord').value;
+	userOutput = userInput.split("");
+	//____________letter 1____________//
+	if (lingoArrayOutput[0] == userInput[0]) {
 		console.log('goed');
+		lingoArrayOutput[0] = null;
 	}
 	else {
 		console.log('fout');
-	}
-	//letter 2
-
-	if (radomOutputWord[1] == x[1]) {
-		console.log('goed');
-	}
-	else {
-		console.log('fout');
-	}
-	//letter 3
-	if (radomOutputWord[2] == x[2]) {
-		console.log('goed');
-	}
-	else {
-		console.log('fout');
-	}
-	//letter 4
-	if (radomOutputWord[3] == x[3]) {
-		console.log('goed');
-	}
-	else {
-		console.log('fout');
-	}
-	//letter 5
-	if (radomOutputWord[4] == x[4]) {
-		console.log('goed');
-	}
-	else {
-		console.log('fout');
+		checkLetter(userInput[0]);
 	}
 
-	console.log(x);
-	console.log(outputWord);
-	console.log(randomWords);
-	console.log(radomOutputWord);
+	//____________letter 2____________//
+
+	if (lingoArrayOutput[1] == userInput[1]) {
+		console.log('goed');
+		lingoArrayOutput[1] = null;
+	}
+	else {
+		console.log('fout');
+		checkLetter(userInput[1]);
+	}
+
+	//____________letter 3____________//
+	if (lingoArrayOutput[2] == userInput[2]) {
+		console.log('goed');
+		lingoArrayOutput[2] = null;
+	}
+	else {
+		console.log('fout');
+		checkLetter(userInput[2]);
+	}
+
+	//____________letter 4____________//
+	if (lingoArrayOutput[3] == userInput[3]) {
+		console.log('goed');
+		lingoArrayOutput[3] = null;
+	}
+	else {
+		console.log('fout');
+		checkLetter(userInput[3]);
+	}
+
+	//____________letter 5____________//
+	if (lingoArrayOutput[4] == userInput[4]) {
+		console.log('goed');
+		lingoArrayOutput[4] = null;
+	}
+	else {
+		console.log('fout');
+		checkLetter(userInput[4]);
+	}
+
+
+	console.log('userInput is = ' + userInput);
+	console.log('userOutput is = ' + userOutput);
+
+	console.log('lingoArrayInput is = ' + lingoArrayInput);
+	console.log('lingoArrayOutput is = ' + lingoArrayOutput);
 }
+
+
+function checkLetter(letter) {
+	for (i = 0; i < 5; i++) {
+		if (letter == lingoArrayOutput[i]) {
+			console.log('goedGEEL');
+		}
+		else {
+			console.log('foutROOD');
+			console.log(letter);
+		}
+	}
+}
+
+
 
