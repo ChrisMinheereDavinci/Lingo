@@ -1,0 +1,50 @@
+body{
+    background-color: antiquewhite;
+}
+#container{
+    color: rgb(204, 55, 55);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+
+#game-container{
+
+}
+
+h2{
+    color: rgb(204, 55, 55);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+#randomword{
+    color: rgb(187, 187, 187);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+
+#useroutput{
+    margin: auto;
+    width: 15%;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(179, 179, 179);
+}
+
+#checker{
+    margin: auto;
+    width: 15%;
+    text-align: center;
+    color: rgb(187, 187, 187);
+    border-width: 8px;
+    border-style: dashed;
+    border-color: rgb(148, 148, 148);
+}
+
+input[type="text"] {
+    width: 20px;
+}
