@@ -1,50 +1,41 @@
 body{
+    margin: 0 auto;
+    /* background-color: antiquewhite; */
+}
+.container{
+    width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+    border: solid black 1px;
+}
+
+.letterbox{
+    height: 50px;
+    width: 50px;
+    border: solid black 1px;
+    display: inline-block;
+    margin: 3px;
+    border-radius:  3px;
     background-color: antiquewhite;
 }
-#container{
-    color: rgb(204, 55, 55);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 40px;
-    text-align: center;
+
+.lettercontainer{
+    margin-top: 150px;
+    margin-left: 250px;
+    width: 300px;
+    height: 310px;
+    border-radius:  10px;
+    background-color: rgb(236, 236, 236);
 }
 
-#game-container{
-
+#title{
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
-h2{
-    color: rgb(204, 55, 55);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 30px;
-    text-align: center;
-}
-
-#randomword{
-    color: rgb(187, 187, 187);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 40px;
-    text-align: center;
-}
-
-#useroutput{
-    margin: auto;
-    width: 15%;
-    text-align: center;
-    border-style: solid;
-    border-width: 2px;
-    border-color: rgb(179, 179, 179);
-}
-
-#checker{
-    margin: auto;
-    width: 15%;
-    text-align: center;
-    color: rgb(187, 187, 187);
-    border-width: 8px;
-    border-style: dashed;
-    border-color: rgb(148, 148, 148);
-}
-
-input[type="text"] {
-    width: 20px;
+#playerinput{
+    position: absolute;
+    margin-left: 220px;
+    margin-top: 110px;
 }

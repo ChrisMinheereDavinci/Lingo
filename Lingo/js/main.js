@@ -480,21 +480,65 @@ var words = [
 	"zeeen"];
 
 var lingoArrayInput = words[Math.floor(Math.random() * words.length)];
-randomword.innerHTML = lingoArrayInput;
+// randomword.innerHTML = lingoArrayInput;
 
 var lingoArrayOutput;
 var userInput;
 var userOutput;
 
 
+
+
+
+var container = document.createElement('div');
+container.classList.add('container');
+document.body.appendChild(container);
+
+// var text = document.createElement('p');
+// var textvalue = document.createTextNode('Lingo');
+// text.setAttribute('id', 'title');
+// text.appendChild(textvalue);
+// container.appendChild(text);
+
+var playerinput = document.createElement('input');
+container.appendChild(playerinput);
+playerinput.setAttribute('id', 'inputWord');
+playerinput.setAttribute('placeholder', 'Type je woord hier');
+playerinput.setAttribute('maxLength', '5');
+
+var lettercontainer = document.createElement('div');
+lettercontainer.classList.add('lettercontainer');
+container.appendChild(lettercontainer);
+
+
+
+for(var a = 1; a<=5; a++) {
+    for (var i = 1; i <= 5; i++) {
+        var letterbox = document.createElement('div');
+        letterbox.classList.add('letterbox');
+        lettercontainer.appendChild(letterbox);
+        letterbox.setAttribute('id', 'letterbox' + i + a);
+    }
+}
+
+
+
+
+
+
+
+
 function check() {
 	lingoArrayOutput = lingoArrayInput.split("");
 	userInput = document.getElementById('inputWord').value;
 	userOutput = userInput.split("");
+
 	//____________letter 1____________//
 	if (lingoArrayOutput[0] == userInput[0]) {
 		console.log('goed');
 		lingoArrayOutput[0] = null;
+		blockGreen.classList.add('lingoGreen');
+
 	}
 	else {
 		console.log('fout');
