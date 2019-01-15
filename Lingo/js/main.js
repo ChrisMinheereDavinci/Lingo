@@ -479,26 +479,24 @@ var words = [
 	"zever",
 	"zeeen"];
 
-var lingoArrayInput = words[Math.floor(Math.random() * words.length)];
-// randomword.innerHTML = lingoArrayInput;
 
+
+var lingoArrayInput = words[Math.floor(Math.random() * words.length)];
 var lingoArrayOutput;
 var userInput;
 var userOutput;
 
 
-
-
-
+//------------------------Styles the page------------------------//
 var container = document.createElement('div');
 container.classList.add('container');
 document.body.appendChild(container);
 
-// var text = document.createElement('p');
-// var textvalue = document.createTextNode('Lingo');
-// text.setAttribute('id', 'title');
-// text.appendChild(textvalue);
-// container.appendChild(text);
+var text = document.createElement('p');
+var textvalue = document.createTextNode(lingoArrayInput);
+text.setAttribute('id', 'title');
+text.appendChild(textvalue);
+container.appendChild(text);
 
 var playerinput = document.createElement('input');
 container.appendChild(playerinput);
@@ -510,16 +508,19 @@ var lettercontainer = document.createElement('div');
 lettercontainer.classList.add('lettercontainer');
 container.appendChild(lettercontainer);
 
-
-
-for(var a = 1; a<=5; a++) {
-    for (var i = 1; i <= 5; i++) {
-        var letterbox = document.createElement('div');
-        letterbox.classList.add('letterbox');
-        lettercontainer.appendChild(letterbox);
-        letterbox.setAttribute('id', 'letterbox' + i + a);
-    }
+for (var a = 1; a <= 5; a++) { //Makes a 5 by 5 grid
+	for (var i = 1; i <= 5; i++) {
+		var letterbox = document.createElement('div');
+		letterbox.classList.add('letterbox');
+		lettercontainer.appendChild(letterbox);
+		letterbox.setAttribute('id', 'letterbox' + i + a);
+	}
 }
+//--------------------------------------------------------------//
+
+
+lingoArrayOutput = lingoArrayInput.split(""); //Takes the 'word' from the array and splits it.
+document.getElementById("letterbox11").innerHTML = (lingoArrayOutput[0]); //Shows the first letter of the word
 
 
 
@@ -527,78 +528,92 @@ for(var a = 1; a<=5; a++) {
 
 
 
+//----------------------Compare 2 arrays with each other by letter------------------------//
 
 function check() {
-	lingoArrayOutput = lingoArrayInput.split("");
-	userInput = document.getElementById('inputWord').value;
-	userOutput = userInput.split("");
+	userInput = document.getElementById('inputWord').value; 
+	userOutput = userInput.split(""); //Turns the user word into an array
 
 	//____________letter 1____________//
 	if (lingoArrayOutput[0] == userInput[0]) {
 		console.log('goed');
+		document.getElementById("letterbox11").innerHTML = (lingoArrayOutput[0]);
+		letterbox11.style.backgroundColor = "green";
 		lingoArrayOutput[0] = null;
-		blockGreen.classList.add('lingoGreen');
-
 	}
 	else {
 		console.log('fout');
-		checkLetter(userInput[0]);
+		checkLetter(userInput[0], 11);
 	}
 
 	//____________letter 2____________//
 
 	if (lingoArrayOutput[1] == userInput[1]) {
 		console.log('goed');
+		document.getElementById("letterbox21").innerHTML = (lingoArrayOutput[1]);
+		letterbox21.style.backgroundColor = "green";
 		lingoArrayOutput[1] = null;
 	}
 	else {
 		console.log('fout');
-		checkLetter(userInput[1]);
+		checkLetter(userInput[1], 21);
 	}
 
 	//____________letter 3____________//
 	if (lingoArrayOutput[2] == userInput[2]) {
 		console.log('goed');
+		document.getElementById("letterbox31").innerHTML = (lingoArrayOutput[2]);
+		letterbox31.style.backgroundColor = "green";
 		lingoArrayOutput[2] = null;
 	}
 	else {
 		console.log('fout');
-		checkLetter(userInput[2]);
+		checkLetter(userInput[2], 31);
 	}
 
 	//____________letter 4____________//
 	if (lingoArrayOutput[3] == userInput[3]) {
 		console.log('goed');
+		document.getElementById("letterbox41").innerHTML = (lingoArrayOutput[3]);
+		letterbox41.style.backgroundColor = "green";
 		lingoArrayOutput[3] = null;
 	}
 	else {
 		console.log('fout');
-		checkLetter(userInput[3]);
+		checkLetter(userInput[3], 41);
 	}
 
 	//____________letter 5____________//
 	if (lingoArrayOutput[4] == userInput[4]) {
 		console.log('goed');
+		document.getElementById("letterbox51").innerHTML = (lingoArrayOutput[4]);
+		letterbox51.style.backgroundColor = "green";
 		lingoArrayOutput[4] = null;
 	}
 	else {
 		console.log('fout');
-		checkLetter(userInput[4]);
+		checkLetter(userInput[4], 51);
 	}
 
-
+	//some debugging
 	console.log('userInput is = ' + userInput);
 	console.log('userOutput is = ' + userOutput);
-
 	console.log('lingoArrayInput is = ' + lingoArrayInput);
 	console.log('lingoArrayOutput is = ' + lingoArrayOutput);
 }
+//----------------------------------------------------------------------------//
 
 
-function checkLetter(letter) {
-	for (i = 0; i < 5; i++) {
+
+
+
+//----Compares all incorrect letters with different letters in the array----//
+function checkLetter(letter, waarde) {
+	for (i = 1; i <= 5; i++) {
 		if (letter == lingoArrayOutput[i]) {
 			console.log('goedGEEL');
+			console.log(waarde);
+			letterbox[waarde].style.backgroundColor = "yello";
 		}
 		else {
 			console.log('foutROOD');
@@ -606,6 +621,5 @@ function checkLetter(letter) {
 		}
 	}
 }
-
-
+//---------------------------------------------------------------------------//
 
