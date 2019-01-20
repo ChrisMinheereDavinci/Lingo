@@ -478,13 +478,8 @@ var words = [
 	"zeker",
 	"zever",
 	"zeeen"];
-//=============================
-	// Bronnen
-	// stackoverflow.com
-	// w3schools.com
-//=============================
 
-// require('wordArry.js')
+
 //-----------------------------------Variable------------------------------------//
 var audio = new Audio('audio/wow.mp3');
 var lingoArrayInput = words[Math.floor(Math.random() * words.length)];
@@ -493,8 +488,6 @@ var userInput;
 var userOutput;
 var row1Goed = [];
 var row1Fout = [];
-var k = 0;
-var l = 0;
 // var input = document.createElement("input");
 // var button = document.getElementById('checkButton');
 var container = document.createElement("div");
@@ -531,6 +524,10 @@ console.log(lingoArrayInput);
 
 //----------------------Compare 2 arrays with each other by letter------------------------//
 
+var k = 0;
+var l = 0;
+
+
 
 function check() {
 	userInput = document.getElementById('inputWord').value;
@@ -538,12 +535,14 @@ function check() {
 
 	for (i = 0; i < 5; i++) {
 		if (lingoArrayOutput[i] == userInput[i]) {
+			console.log('goed');
 			row1Goed[i] = lingoArrayOutput[i];
 			document.getElementById('letterbox' + (i + 1) + (k + 1)).innerHTML = (lingoArrayOutput[i]);
 			document.getElementById('letterbox' + (i + 1) + (k + 1)).style.backgroundColor = "#00b70c";
 			lingoArrayOutput2[i] = null;
 		}
 		else {
+			console.log('fout');
 			row1Fout[i] = userInput[i];
 		}
 	}
@@ -552,12 +551,11 @@ function check() {
 
 	if (lingoArrayOutput2[1] == null && lingoArrayOutput2[2] == null && lingoArrayOutput2[3] == null && lingoArrayOutput2[4] == null && lingoArrayOutput2[5] == null) {
 		audio.play();
-		alert("WOW goed heur! \n\nHet koste je " + (l) + " poging(en) om het spel uit te spelen\n\nNog een keer spelen?  klik dan op 'OK'");
-		location.reload();
+		alert("WOW goed heur! \n\nHet koste je " + (l) +  " poging(en) om het spel uit te spelen\n\nNog een keer spelen?  klik dan op 'OK'");
+		location.reload(); 
 	}
 	if (l == 5) {
 		alert("Dit was je laatse kans!");
-		location.reload();
 	}
 }
 
@@ -566,10 +564,14 @@ function check() {
 function checkLetter() {
 	for (j = 0; j < row1Fout.length; j++) {
 		if (row1Fout[j] != null && lingoArrayOutput2.indexOf(row1Fout[j]) > -1) {
+			// console.log('goedGEEL');
+			// console.log(row1Fout[j]);
 			document.getElementById('letterbox' + (j + 1) + (l + 1)).innerHTML = (userOutput[j]);
 			document.getElementById('letterbox' + (j + 1) + (l + 1)).style.backgroundColor = "#FFD700";
 		}
 		else if (row1Fout[j] != null) {
+			console.log('foutROOD');
+			console.log(row1Fout[j]);
 		}
 	}
 	l++;
