@@ -557,6 +557,7 @@ function check() {
 	}
 	if (l == 5) {
 		alert("Dit was je laatse kans!");
+		alert("Het woord was:  " + lingoArrayInput);
 		location.reload();
 	}
 }
