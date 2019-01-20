@@ -481,6 +481,7 @@ var words = [
 
 
 //-----------------------------------Variable------------------------------------//
+var audio = new Audio('audio/wow.mp3');
 var lingoArrayInput = words[Math.floor(Math.random() * words.length)];
 var lingoArrayOutput;
 var userInput;
@@ -525,10 +526,12 @@ console.log(lingoArrayInput);
 
 var k = 0;
 var l = 0;
+
+
+
 function check() {
 	userInput = document.getElementById('inputWord').value;
 	userOutput = userInput.split(""); //Turns the user word into an array
-
 
 	for (i = 0; i < 5; i++) {
 		if (lingoArrayOutput[i] == userInput[i]) {
@@ -536,7 +539,7 @@ function check() {
 			row1Goed[i] = lingoArrayOutput[i];
 			document.getElementById('letterbox' + (i + 1) + (k + 1)).innerHTML = (lingoArrayOutput[i]);
 			document.getElementById('letterbox' + (i + 1) + (k + 1)).style.backgroundColor = "#00b70c";
-			lingoArrayOutput2[i] = null; 
+			lingoArrayOutput2[i] = null;
 		}
 		else {
 			console.log('fout');
@@ -544,12 +547,16 @@ function check() {
 		}
 	}
 	k++;
-	console.log(k);
-	console.log(row1Goed);
-	console.log(row1Fout);
-	console.log(lingoArrayOutput);
-	console.log(lingoArrayOutput2);
 	checkLetter();
+
+	if (lingoArrayOutput2[1] == null && lingoArrayOutput2[2] == null && lingoArrayOutput2[3] == null && lingoArrayOutput2[4] == null && lingoArrayOutput2[5] == null) {
+		audio.play();
+		alert("WOW goed heur! \n\nHet koste je " + (l) +  " poging(en) om het spel uit te spelen\n\nNog een keer spelen?  klik dan op 'OK'");
+		location.reload(); 
+	}
+	if (l == 5) {
+		alert("Dit was je laatse kans!");
+	}
 }
 
 
