@@ -1,0 +1,35 @@
+body{
+    margin: 0 auto;
+    width: auto;
+    /* background-color: antiquewhite; */
+}
+#container{
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+}
+
+.letterbox{
+    height: 50px;
+    width: 50px;
+    border: solid black 1px;
+    display: inline-block;
+    margin: 3px;
+    border-radius:  3px;
+    background-color: antiquewhite;
+}
+
+h1{
+    color: crimson;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 80px;
+}
+
+.letterContainer{
+    margin: auto;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    width: 308px;
+    height: 340px;
+}
+
